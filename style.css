@@ -1,11 +1,12 @@
 body {
-
+    margin:0;
 }
 
 .container {
     display:flex;
     flex-direction: column;
     align-items: center;
+    background-color: yellow;
 }
 
 header .logo {
@@ -17,4 +18,8 @@ header nav {
     display:flex;
     justify-content: space-around;
     align-items: center;
+}
+
+footer {
+    margin-left: 25px;
 }
