@@ -11,3 +11,12 @@ document.getElementById('searchButton').addEventListener('click', function() {
         alert('Search term not found.');
     }
 });
+
+// Making the hamburger menu toggle the visiablity of nav-links
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const navLinks = document.querySelector('.nav-links');
+
+hamburgerMenu.addEventListener('click', ()=> {
+    navLinks.classList.toggle('active');
+    console.log('Hamburger menu clicked, class toggled');
+});

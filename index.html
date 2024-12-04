@@ -1,50 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" type="text/css" rel="stylesheet">
-    <script src="script.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Merced Market</title>
-</head>
-<body>
+    <link href="style.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Header Section-->
     <header>
-        <div class="container">
-            <div class="logo">
-                <h1> Merced Market</h1>
-            </div>
-            <nav>
-                <form id="searchBar">
-                    <input type="text" id="searchInput" placeholder="Search...">
-                    <button type="submit" id="searchButton">Find a Product</button>
-                </form>
-                <a href="#"> User Login </a>
-                <a href="#"> Shopping Cart Logo </a>
-                <a href="#"> System Preferences Logo </a>
-            </nav>
+      <div class="container">
+        <div class="logo">
+          <h1>Merced Market</h1>
         </div>
-    </header>
+        <nav class="navbar">
+          <!-- Hamburger menu -->
+          <button class="hamburger-menu" aria-label="Toggle navigation">
+            &#9776;
+            <!-- Hamburger icon -->
+          </button>
+          <!-- Search bar -->
+          <div class="search-bar">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search for items..."
+            />
+            <button id="searchButton">
+              <i class="fas fa-search"></i> Search
+            </button>
+          </div>
 
-    <section class="homepage">
+          <!-- Nav links -->
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li>
+              <a href="#"><i clas="fas fa-user"></i>Login</a>
+            </li>
+            <li>
+              <a href="#"><i clas="fas fa-shopping-cart"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="homepage">
         <div class="container">
-            <div class="center">
-                <div class="leftside">
-                    <h2>Ad placement</h2>
-                </div>
-                <div class="rightside">
-                    <h2>Main page</h2>
-                    <ul>
-                        <li>Trending</li>
-                        <li>Top Sellers</li>
-                        <li>Cart Design</li>
-                    </ul>
-                </div>
+          <div class="center">
+            <div class="leftside">
+              <h2>Ad placement</h2>
             </div>
+            <div class="rightside">
+              <h2>Main page</h2>
+              <ul>
+                <li>Trending</li>
+                <li>Top Sellers</li>
+                <li>Cart Design</li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </section>
-    <footer>
+      </section>
+      <footer>
         <li>About</li>
         <li>FAQ</li>
-    </footer>
-</body>
+      </footer>
+    </main>
+    <!-- Link to JS -->
+    <script src="script.js"></script>
+  </body>
 </html>
