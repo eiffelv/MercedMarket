@@ -1,10 +1,15 @@
 /* General styles */
-body {
+html, body {
     font-family: Arial, sans-serif;
     margin: 0;
+    min-height: 100%;
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
-
+.content {
+    flex: 1;
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -61,6 +66,7 @@ header {
 
 /* Navbar styles */
 .navbar{
+    position: relative;
     display: flex;
     align-items: center;
 }
@@ -75,6 +81,7 @@ header {
 
 .nav-links a{
     text-decoration: none;
+    text-align: center;
     color: white;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -97,11 +104,12 @@ header {
     .nav-links {
         display: none;
         flex-direction: column;
+        align-items: center;
         background-color: #833bf6;
         list-style: none;
         position: absolute;
+        left: 0;
         top: 100%;
-        right: 0;
         width: 200px;
         gap: 1rem;
         margin: 0;
@@ -115,11 +123,13 @@ header {
     
     .nav-links.active{
         display: flex;
-        transform: translateY(0);
+        text-decoration: wavy;
+        transform: translate3d(10px, 10px, 10px);;
         opacity: 1;
     }
     
     .hamburger-menu{
+        position: relative;
         display: block; /* Makes things visable on smaller screens */
         z-index: 1100;
     }
@@ -155,20 +165,58 @@ header nav a {
     background-color: yellow;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    width: 100%;
+/* Footer styling */
+footer{
+    background-color: #833bf6;
+    color: whitesmoke;
+    padding: 1rem 0;
     text-align: center;
 }
 
-footer ul {
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-links {
     list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
     padding: 0;
 }
 
-footer li {
-    display: inline;
-    margin: 0 10px;
+.footer-links li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links li a:hover{
+    color: #e6dc1f;
+}
+
+.footer-info {
+    font-size: 0.875rem;
+}
+
+/* Media Query for footer */
+@media (min-width: 768px){
+    .footer-container {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-links {
+        justify-content: flex-start;
+    }
+
+    .footer-info {
+        text-align: right;
+    }
 }
