@@ -13,6 +13,30 @@
   "devDependencies": {
     "nodemon": "^3.1.7"
   },
-  "author": "",
+  "author": {
+    "name": "Team Merced",
+    "url": "https://github.com/eiffelv/MercedMarket"
+  },
+  "contributors": [
+    {
+      "name": "eiffelv",
+      "url": "https://github.com/eiffelv"
+    },
+    {
+      "name": "jayesquivel",
+      "url": "https://github.com/jayesquivel"
+    },
+    {
+      "name": "cyrusmp",
+      "url": "https://github.com/cyrusmp"
+    },
+    {
+      "name": "TensorCraft",
+      "url": "https://github.com/TensorCraft"
+    }
+  ],
+  "engines": {
+    "node": ">=18.x"
+  },
   "license": "MIT"
 }
