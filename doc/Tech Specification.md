@@ -2,24 +2,33 @@ Architecture of Market Merced
 
 ### Pages:
 
-+ Home
-+ Login
-+ Register
-+ Profile
-+ Checkout
-+ Search
++ Home (Jason)
++ Login(Joseph)
++ Register(Joseph)
++ Profile(Effiel)
++ Checkout(Effiel)
++ Search(Jason)
 
-- Product Page
+- Product Page (Jason)
 
-- Payment Setup
+- Payment Setup (Cyrus)
 
-- About / Company Info
-- FAQ
+- About / Company Info (Cyrus)
+- FAQ(Cyrus)
+
+Optional:
+
 - Settings / Preferences
 
 + Open Shop
 + Shop Settings
 + Shop
+
+**Specifications**
+
+Primary Color: `#F7D147`
+
+Secondary Color: `#4C277A`
 
 ### APIs:
 
