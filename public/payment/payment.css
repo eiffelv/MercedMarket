@@ -1,0 +1,148 @@
+/* General styles */
+html,
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Search bar styling */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 0.25rem 0.5rem;
+  box-shadow: 0 2px 4 px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 20px;
+  background-color: transparent;
+}
+
+.search-bar button {
+  border: none;
+  background-color: transparent;
+  color: #f6e33b;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+
+.search-bar button:hover {
+  color: #833bf6;
+}
+/* Header */
+header {
+  background-color: #833bf6;
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo h1 {
+  margin: 0;
+}
+
+/* Navbar styles */
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #e6dc1f;
+}
+
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #833bf6;
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 200px;
+    gap: 1rem;
+    margin: 0;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+    text-decoration: wavy;
+    transform: translate3d(10px, 10px, 10px);
+    opacity: 1;
+  }
+
+  .hamburger-menu {
+    position: relative;
+    display: block; /* Makes things visable on smaller screens */
+    z-index: 1100;
+  }
+}
+
+header nav form {
+  display: flex;
+  flex: 2;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
