@@ -21,3 +21,25 @@ hamburgerMenu.addEventListener("click", () => {
   navLinks.classList.toggle("active");
   console.log("Hamburger menu clicked, class toggled");
 });
+
+//new users get 30% off
+function calculateFinalCost(cartPrices, pastPurchase) {
+  let sumOfCart = cartPrices.reduce((total, price) => total + price, 0);
+
+  let finalCost;
+  let tax;
+  let finalCostWithTax
+
+  if (pastPurchase) {
+    let discount = (sumOfCart * 30) / 100;
+    finalCost = sumOfCart - discount;
+    tax = (finalCost * 9.875) / 100;
+    finalCostWithTax = finalCost + tax;
+  } else {
+    finalCost = sumOfCart
+    tax = (finalCost * 9.875) / 100;
+    finalCostWithTax = finalCost + tax;
+  }
+
+  console.log(`Price due: $${finalCostWithTax.toFixed(2)}`);
+}
