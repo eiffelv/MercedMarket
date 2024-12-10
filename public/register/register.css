@@ -1,0 +1,69 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F4F4F9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.register-container {
+    background-color: whitesmoke;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+}
+
+.register-container h1 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+.register-container form {
+    display: flex;
+    flex-direction: column
+}
+
+.register-container label {
+    text-align: left;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.register-container input {
+    margin-bottom: 1rem;
+    padding: 0.7rem;
+    border: 1px soild #ddd;
+    border-radius: 5px;
+}
+
+.register-container button {
+    padding: 0.75rem;
+    border: none;
+    background-color: #833BF6;
+    color: whitesmoke;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-container button:hover {
+    background-color: #5E27A1;
+}
+
+.register-container p {
+    margin-top: 1rem;
+    color: #666;
+}
+
+.register-container p a {
+    color: #833BF6;
+    text-decoration: none;
+}
