@@ -36,56 +36,80 @@
           <ul class="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#">Products</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="about/about.html">About Us</a></li>
             <li><a href="#">Contact</a></li>
-            <li>
-              <a href="h#"><i class="fas fa-user"></i> Login</a>
-            </li>
-            <li>
-              <a href="payment.html"><i class="fas fa-shopping-cart"></i></a>
-            </li>
+            <li><a href="login/login.html"><i class="fas fa-user"></i> Login</a></li>
+            <li><a href="payment/cart.html"><i class="fas fa-shopping-cart"></i></a></li>
           </ul>
         </nav>
       </div>
     </header>
     <main>
-      <div class="loginReminder">
-        <h3> Haven an account? <a href="https://github.com/eiffelv/MercedMarket/blob/main/public/login/login.html"> Login </a> </h3>
-      </div>
-      <div class="paymentDetails">
-        <h2> Customer Details</h2>
-
-        <h3>First name on card: </h3>
-          <input
-            type="text"
-            id="firstName"
-            placeholder="..."
-          />
-        <h3> Last name on card: </h3>
-        <input
-          type="text"
-         id="lastName"
-         placeholder="..."
-        />
-        <h3> Card number: </h3>
-        <input
-          type="text"
-          id="cardNumber"
-          placeholder="..."
-        />
-        <h3> Security code: </h3>
-        <input
-          type="text"
-          id="securityCode"
-          placeholder="..."
-        />
-      </div>
+      <section class="homepage">
+        <div class="center">
+          <div class="loginReminder">
+            <h3> Haven an account? <a href="https://github.com/eiffelv/MercedMarket/blob/main/public/login/login.html"> Login </a> </h3>
+          </div>
+          <div class="paymentDetails">
+            <h3> Customer Details</h3>
+            <h3>First name: </h3>
+              <input
+                type="text"
+                id="firstName"
+                placeholder="..."
+              />
+            <h3> Last name: </h3>
+            <input
+              type="text"
+             id="lastName"
+             placeholder="..."
+            />
+            <h3> Phone number: </h3>
+            <input
+              type="text"
+              id="cardNumber"
+              placeholder="..."
+            />
+            <h3> Email: </h3>
+            <input
+              type="text"
+              id="securityCode"
+              placeholder="..."
+            />
+            <h3> Card Details</h3>
+            <h3>First name on card: </h3>
+              <input
+                type="text"
+                id="firstName"
+                placeholder="..."
+              />
+            <h3> Last name on card: </h3>
+            <input
+              type="text"
+             id="lastName"
+             placeholder="..."
+            />
+            <h3> Card number: </h3>
+            <input
+              type="text"
+              id="cardNumber"
+              placeholder="..."
+            />
+            <h3> Security code: </h3>
+            <input
+              type="text"
+              id="securityCode"
+              placeholder="..."
+            />
+          </div>   
+        </div>
+      </section>
       <footer>
         <div class="footer-container">
             <ul class="footer-links">
-                <li><a href="#"></a>About</li>
-                <li><a href="#"></a>FAQ</li>
-                <li><a href="#"></a>Contact</li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
             <div class="footer-info">
                 <p>&copy; 2024 Merced Market</p>
@@ -93,5 +117,7 @@
         </div>
       </footer>
     </main>
+    <!-- Link to JS -->
+    <script src="script.js"></script>
   </body>
 </html>
