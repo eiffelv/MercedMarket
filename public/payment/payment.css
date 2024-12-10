@@ -1,6 +1,6 @@
 @import url('file:///Users/cyrusperez/Desktop/MercedMarket-2/public/style.css');
 
-.paymentDetails, .loginReminder {
+.paymentDetails, .loginReminder, .paymentLink {
     margin: 0;
     padding: 1rem;
 }
