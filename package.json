@@ -8,15 +8,13 @@
     "dev": "nodemon index.js"
   },
   "dependencies": {
-    "express": "^4.21.1"
+    "express": "^4.21.2",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
   },
-  "author": {
-    "name": "Team Merced",
-    "url": "https://github.com/eiffelv/MercedMarket"
-  },
+  "author": "Team Merced (https://github.com/eiffelv/MercedMarket)",
   "contributors": [
     {
       "name": "eiffelv",
@@ -38,5 +36,9 @@
   "engines": {
     "node": ">=18.x"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "directories": {
+    "doc": "doc"
+  },
+  "keywords": []
 }
