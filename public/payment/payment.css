@@ -15,3 +15,18 @@ th, td {
     text-align: left;
     border-bottom: 1px;
 }
+
+.decrease {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.decrease:active {
+    border: solid;
+}
+
+.decrease img {
+    width: 20px;
+    height: 20px;
+}
