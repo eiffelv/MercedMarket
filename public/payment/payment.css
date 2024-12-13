@@ -10,26 +10,26 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the form content horizontally */
+    align-items: center; 
 }
 
 #payment-form h2 {
-    margin-top: 20px; /* Adjust the value as needed */
+    margin-top: 20px; 
 }
 
 #payment-form label {
     display: block;
-    margin-top: 10px; /* Adjust the value as needed */
+    margin-top: 10px; 
 }
 
 #payment-form input {
     display: block;
     margin-top: 5px;
-    margin-bottom: 10px; /* Adjust the value as needed */
-    width: 50%; /* Increase the width of the input boxes */
-    height: 30px; /* Increase the height of the input boxes */
-    padding: 10px; /* Add padding for better readability */
-    font-size: 16px; /* Increase the font size */
+    margin-bottom: 10px; 
+    width: 50%; 
+    height: 30px; 
+    padding: 10px; 
+    font-size: 16px; 
 }
 
 table {
