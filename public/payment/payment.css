@@ -30,6 +30,22 @@
     height: 30px; 
     padding: 10px; 
     font-size: 16px; 
+    border-radius: 5px;
+}
+
+#payment-form button {
+    margin-top: 20px; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    cursor: pointer;
+    background-color: black; 
+    color: white; 
+    border: none; 
+    border-radius: 5px;  
+}
+
+#payment-form button:hover {
+    color: #e6dc1f;
 }
 
 table {
