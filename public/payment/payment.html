@@ -48,59 +48,41 @@
       <section class="homepage">
         <div class="center">
           <div class="loginReminder">
-            <h4> Haven an account? <a href="https://github.com/eiffelv/MercedMarket/public/login/login.html"> Login </a> </h4>
+            <h4> Haven an account? <a href="#"> Login </a> </h4>
           </div>
-          <div class="paymentDetails">
-            <h3> Customer Details</h3>
-            <h3>First name: </h3>
-              <input
-                type="text"
-                id="firstName"
-                placeholder="..."
-              />
-            <h3> Last name: </h3>
-            <input
-              type="text"
-             id="lastName"
-             placeholder="..."
-            />
-            <h3> Phone number: </h3>
-            <input
-              type="text"
-              id="cardNumber"
-              placeholder="..."
-            />
-            <h3> Email: </h3>
-            <input
-              type="text"
-              id="securityCode"
-              placeholder="..."
-            />
-            <h3> Card Details</h3>
-            <h3>First name on card: </h3>
-              <input
-                type="text"
-                id="firstName"
-                placeholder="..."
-              />
-            <h3> Last name on card: </h3>
-            <input
-              type="text"
-             id="lastName"
-             placeholder="..."
-            />
-            <h3> Card number: </h3>
-            <input
-              type="text"
-              id="cardNumber"
-              placeholder="..."
-            />
-            <h3> Security code: </h3>
-            <input
-              type="text"
-              id="securityCode"
-              placeholder="..."
-            />
+            <h2>Customer Details</h3>
+            <form id="payment-form">
+              <div class="step" id="step-1">
+              <label for="first-name">First Name</label>
+              <input type="text" id="firstName" required>
+              <label for="last-name">Last Name</label>
+              <input type="text" id="lastName" required>
+              <label for="email">Email</label>
+              <input type="text" id="email" required>
+              <label for="phone-number">Phone Number</label>
+              <input type="text" id="phone-number" required>
+            </div>
+            <div class="step" id="step-2">
+              <h2>Address Details</h2>
+              <label for="street">Street</label>
+              <input type="text" id="street" required>
+              <label for="city">City</label>
+              <input type="text" id="city" required>
+              <label for="state">State</label>
+              <input type="text" id="state" required>
+              <label for="zip">Zip Code</label>
+              <input type="text" id="zip" required>
+            </div>
+            <div class="step" id="step-3">
+              <h2>Payment Details</h2>
+              <label for="card-name">Name on Card</label>
+              <input type="text" id="card-name" required>
+              <label for="card-number">Card Number</label>
+              <input type="text" id="card-number" required>
+              <label for="security-code">Security Code</label>
+              <input type="text" id="security-code" required>
+            </div>
+          </form>
           </div>   
         </div>
       </section>
