@@ -27,6 +27,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
         user_id INTEGER,
         item_name TEXT NOT NULL,
         quantity INTEGER NOT NULL,
+        price INTEGER NOT NULL,
         FOREIGN KEY (user_id) REFERENCES user_profiles(id)
       )`, (err) => {
         if (err) {
