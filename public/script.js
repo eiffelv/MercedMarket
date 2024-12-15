@@ -43,3 +43,24 @@ function calculateFinalCost(cartPrices, pastPurchase) {
 
   console.log(`Price due: $${finalCostWithTax.toFixed(2)}`);
 }
+
+// Ad Rotator Functionality
+const adImages = [
+  'assests/iPhone16Pro.png',
+  'assests/BetterHealth.png'
+];
+
+let currentAdIndex = 0;
+const adImageElement = document.querySelector('.ad-image');
+
+// Function to rotate ads
+function rotateAds() {
+  currentAdIndex = (currentAdIndex + 1) % adImages.length; // Move to the next ad
+  adImageElement.style.opacity = 0; // Fade out current ad properly
+  setTimeout(() => {
+    adImageElement.src = adImages[currentAdIndex]; // Changes image src
+    adImageElement.style.opacity = 1; // Fade into new ad
+  }, 500); // Sync with CSS Transtion time
+}
+
+setInterval(rotateAds, 3000);
