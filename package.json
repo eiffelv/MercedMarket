@@ -4,42 +4,41 @@
     "description": "MercedMarket Website",
     "main": "index.js",
     "scripts": {
-      "start": "node index.js",
-      "dev": "nodemon index.js"
+        "start": "node index.js",
+        "dev": "nodemon index.js"
     },
     "dependencies": {
-      "express": "^4.21.2",
-      "sqlite3": "^5.1.7"
+        "express": "^4.21.2",
+        "sqlite3": "^5.1.7"
     },
     "devDependencies": {
-      "nodemon": "^3.1.7"
+        "nodemon": "^3.1.7"
     },
     "author": "Team Merced (https://github.com/eiffelv/MercedMarket)",
     "contributors": [
-      {
-        "name": "eiffelv",
-        "url": "https://github.com/eiffelv"
-      },
-      {
-        "name": "jayesquivel",
-        "url": "https://github.com/jayesquivel"
-      },
-      {
-        "name": "cyrusmp",
-        "url": "https://github.com/cyrusmp"
-      },
-      {
-        "name": "TensorCraft",
-        "url": "https://github.com/TensorCraft"
-      }
+        {
+            "name": "eiffelv",
+            "url": "https://github.com/eiffelv"
+        },
+        {
+            "name": "jayesquivel",
+            "url": "https://github.com/jayesquivel"
+        },
+        {
+            "name": "cyrusmp",
+            "url": "https://github.com/cyrusmp"
+        },
+        {
+            "name": "TensorCraft",
+            "url": "https://github.com/TensorCraft"
+        }
     ],
     "engines": {
-      "node": ">=18.x"
+        "node": ">=18.x"
     },
     "license": "MIT",
     "directories": {
-      "doc": "doc"
+        "doc": "doc"
     },
     "keywords": []
-  }
-  
+}
