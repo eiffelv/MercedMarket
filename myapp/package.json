@@ -1,49 +1,16 @@
 {
-  "name": "merced-market",
-  "version": "0.1.0",
-  "description": "MercedMarket Website",
-  "main": "index.js",
+  "name": "myapp",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "nodemon index.js"
+    "start": "node ./bin/www"
   },
   "dependencies": {
-    "express": "^4.21.2",
-    "sqlite3": "^5.1.7",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "express": "~4.16.1",
     "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.7"
-  },
-  "author": "Team Merced (https://github.com/eiffelv/MercedMarket)",
-  "contributors": [
-    {
-      "name": "eiffelv",
-      "url": "https://github.com/eiffelv"
-    },
-    {
-      "name": "jayesquivel",
-      "url": "https://github.com/jayesquivel"
-    },
-    {
-      "name": "cyrusmp",
-      "url": "https://github.com/cyrusmp"
-    },
-    {
-      "name": "TensorCraft",
-      "url": "https://github.com/TensorCraft"
-    }
-  ],
-  "engines": {
-    "node": ">=18.x"
-  },
-  "license": "MIT",
-  "directories": {
-    "doc": "doc"
-  },
-  "keywords": []
+    "morgan": "~1.9.1",
+    "pug": "2.0.0-beta11"
+  }
 }
