@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registeration Page</title>
-    <link rel="stylesheet" href="register.css">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="/login/login.css">
 </head>
 <body>
-    <div class="register-container">
+    <div class="login-container">
         <h1>Register</h1>
-        <form id="registerForm">
+        <form id="loginForm">
             <label for="name">Full Name:</label>
-            <input type="text" id="name" placeholder="Enter your full name" required>
+            <input type="text" id="name" placeholder="John Doe" required>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+            <input type="email" id="email" name="email" placeholder="jdoe@sfsu.edu" required>
 
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <input type="password" id="password" name="password" placeholder="Create a password" required>
 
             <label for="confirmPassword">Confirm Password:</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" required>
 
             <button type="submit">Register!</button>
         </form>
-        <p>Already have an account? <a href="..//login/login.html">Login here</a></p>
+        <p>Already have an account? <a href="/login">Login here</a></p>
+        <p><a href="/">Return Home</a></p>
     </div>
     <script src="register.js" defer></script>
 </body>
