@@ -1,19 +1,39 @@
 {
-  "name": "myapp",
-  "version": "0.0.0",
-  "private": true,
+  "name": "mercedmarket",
+  "version": "0.1.0",
+  "main": "app.js",
+  "author": "Team Merced (https://github.com/eiffelv/MercedMarket)",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "eiffelv",
+      "url": "https://github.com/eiffelv"
+    },
+    {
+      "name": "jayesquivel",
+      "url": "https://github.com/jayesquivel"
+    },
+    {
+      "name": "cyrusmp",
+      "url": "https://github.com/cyrusmp"
+    },
+    {
+      "name": "TensorCraft",
+      "url": "https://github.com/TensorCraft"
+    }
+  ],
   "scripts": {
-    "start": "node app.js",
-    "devstart": "nodemon .bin/www",
-    "serverstart": "DEBUG=myapp:* npm start"
+    "start": "nodemon app.js",
+    "run": "node app.js"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "morgan": "~1.9.1",
-    "pug": "2.0.0-beta11",
+    "cookie-parser": "^1.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "http-errors": "^2.0.0",
     "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
   }
 }
