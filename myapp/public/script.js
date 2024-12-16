@@ -43,11 +43,11 @@ function rotateAds() {
 
 //add item to cart
 document.getElementById('addToCartButton').addEventListener('click', function() {
-  const productId = 1; // Replace with the actual product ID
-  const quantity = 1; // Replace with the desired quantity
-
-  fetch('/cart', {
-    method: 'POST',
+    const productId = 1; // Replace with the actual product ID
+    const quantity = 1; // Replace with the desired quantity
+  
+    fetch('/cart', {
+      method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
@@ -63,5 +63,7 @@ document.getElementById('addToCartButton').addEventListener('click', function() 
   })
   .catch(error => console.error('Error:', error));
 });
+})
+
 
 setInterval(rotateAds, 3000);
