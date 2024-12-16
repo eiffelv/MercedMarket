@@ -1,78 +1,80 @@
-@import url('file:///Users/cyrusperez/Desktop/MercedMarket-2/public/style.css');
-
-.paymentDetails, .loginReminder, .paymentLink, .cart {
-    margin: 0;
-    padding: 1rem;
+.paymentDetails,
+.loginReminder,
+.paymentLink,
+.cart {
+  margin: 0;
+  padding: 1rem;
 }
 
 #payment-form {
-    margin: 0;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #payment-form h2 {
-    margin-top: 20px; 
+  margin-top: 20px;
 }
 
 #payment-form label {
-    display: block;
-    margin-top: 10px; 
+  display: block;
+  margin-top: 10px;
 }
 
 #payment-form input {
-    display: block;
-    margin-top: 5px;
-    margin-bottom: 10px; 
-    width: 50%; 
-    height: 30px; 
-    padding: 10px; 
-    font-size: 16px; 
-    border-radius: 5px;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  width: 50%;
+  height: 30px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
 }
 
 #payment-form button {
-    margin-top: 20px; 
-    padding: 10px 20px; 
-    font-size: 16px;
-    cursor: pointer;
-    background-color: black; 
-    color: white; 
-    border: none; 
-    border-radius: 5px;  
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
 }
 
 #payment-form button:hover {
-    color: #e6dc1f;
+  color: #e6dc1f;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
 }
 
-th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px;
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px;
 }
 
 button {
-    padding: 5px 10px;
+  padding: 5px 10px;
 }
 .decrease {
-    background: none;
-    border: none;
-    cursor: pointer;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .decrease:active {
-    border: solid;
+  border: solid;
 }
 
 .decrease img {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }

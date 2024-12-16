@@ -7,7 +7,9 @@ const port = 3000;
 
 // Import routers
 const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
+const usersRouter = require("./routes/user");
+const cartRouter = require("./routes/cart");
+const orderRouter = require("./routes/order");
 
 // Create an express application
 const app = express();
@@ -15,7 +17,7 @@ const app = express();
 // Setup view engine
 app.set("views", path.join(__dirname, "views"));
 
-// Using ejs to simplify convertion from existing HTML to EJS
+// Using EJS to simplify convertion from existing HTML to EJS
 app.set("view engine", "ejs");
 
 // Setup middlewares
@@ -28,7 +30,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Setup routers
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
+app.use("/user", usersRouter);
+app.use("/cart", cartRouter);
+app.use("/order", orderRouter);
 
 // Catch 404 and forward to error handler
 app.use((req, res, next) => {
