@@ -22,28 +22,6 @@ hamburgerMenu.addEventListener("click", () => {
   console.log("Hamburger menu clicked, class toggled");
 });
 
-//new users get 30% off
-function calculateFinalCost(cartPrices, pastPurchase) {
-  let sumOfCart = cartPrices.reduce((total, price) => total + price, 0);
-
-  let finalCost;
-  let tax;
-  let finalCostWithTax
-
-  if (pastPurchase) {
-    let discount = (sumOfCart * 30) / 100;
-    finalCost = sumOfCart - discount;
-    tax = (finalCost * 9.875) / 100;
-    finalCostWithTax = finalCost + tax;
-  } else {
-    finalCost = sumOfCart
-    tax = (finalCost * 9.875) / 100;
-    finalCostWithTax = finalCost + tax;
-  }
-
-  console.log(`Price due: $${finalCostWithTax.toFixed(2)}`);
-}
-
 // Ad Rotator Functionality
 const adImages = [
   'assests/iPhone16Pro.png',
@@ -62,5 +40,28 @@ function rotateAds() {
     adImageElement.style.opacity = 1; // Fade into new ad
   }, 500); // Sync with CSS Transtion time
 }
+
+//add item to cart
+document.getElementById('addToCartButton').addEventListener('click', function() {
+  const productId = 1; // Replace with the actual product ID
+  const quantity = 1; // Replace with the desired quantity
+
+  fetch('/cart', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ productId, quantity })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      alert('Item added to cart!');
+    } else {
+      alert('Failed to add item to cart.');
+    }
+  })
+  .catch(error => console.error('Error:', error));
+});
 
 setInterval(rotateAds, 3000);
