@@ -3,8 +3,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  // res.render('index', { title: 'Express' });
-  res.sendFile("E:\\Git\\MercedMarket\\public\\index.html");
+  console.log("Serving Home Page");
+  res.render("index", { title: "Express" });
 });
 
 module.exports = router;
