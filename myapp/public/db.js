@@ -22,6 +22,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
         }
       });
 
+      //create a table for cart items
       db.run(`CREATE TABLE IF NOT EXISTS cart_items (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         user_id INTEGER,
@@ -33,7 +34,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
         if (err) {
           console.error('Error creating cart_items table:', err.message);
         } else {
-          console.log('cart_items table created successfully.');
+          console.log('cart items table created successfully.');
         }
       });
     }
