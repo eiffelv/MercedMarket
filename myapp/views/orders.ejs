@@ -1,0 +1,44 @@
+<% title = "Merced Market" %>
+<% additionalStyles = ['/orders/orders.css'] %>
+<% additionalScripts = ['/orders/orders.js'] %>
+
+<%- contentFor('body') %>
+<section class="homepage">
+  <div class="center">
+    <!-- Display saved cart items -->
+    <div class="cart">
+    <% if (data.length > 0) { %>
+        <% data.forEach(order => { %>
+        <h1>Order:<%= order.id %></h1>
+        <table>
+            <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% order.items.forEach(product => { %>
+                <tr>
+                    <% const productImage = '/img/' + product.product_id %>
+                    <td><img class="productImage" src="<%= productImage %>"></td>
+                    <td><%= product.quantity %></td>
+                    <td><%= product.price %></td>
+                    <td>
+                    <p>Pending</p>
+                    </td>
+                </tr>
+            <% }) %>
+            </tbody>
+        </table>
+        <h3>Total: $<%= order.total %></h3>
+        <button onclick="cancelOrder(<%= order.id %>);">Cancel Order</button>
+    <% }) %>
+    <% } else { %>
+    <h3>No order placed yet...</h3>
+    <% } %>
+    </div>
+  </div>
+</section>

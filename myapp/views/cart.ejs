@@ -11,6 +11,8 @@
       <table>
         <thead>
           <tr>
+            <th>Select</th>
+            <th>Name</th>
             <th>Item</th>
             <th>Quantity</th>
             <th>Price</th>
@@ -23,8 +25,35 @@
          <% data.forEach(product => { %>
             <tr>
                 <% const productImage = '/img/' + product.product_id %>
+                <td>
+                    <input 
+                      type="checkbox" 
+                      class="item-checkbox" 
+                      value="<%= product.product_id %>" 
+                      id="checkbox_<%= product.product_id %>"
+                    />
+                  </td>
+                <td>
+                    <b><%= product.name %></b>
+                </td>
                 <td><img class="productImage" src="<%= productImage %>"></td>
-                <td><%= product.quantity %></td>
+                <td>
+                    <span 
+                    id="quantity_label_<%= product.product_id %>" 
+                    class="quantity-label" 
+                    onclick="showInput(<%= product.product_id %>)"
+                  >
+                    <%= product.quantity %>
+                  </span>
+                  <input 
+                    type="number" 
+                    min="1" 
+                    value="<%= product.quantity %>" 
+                    id="quantity_input_<%= product.product_id %>" 
+                    class="quantity-input hidden"
+                    onblur="updateQuantity(<%= product.product_id %>)"
+                  />
+                  </td>                  
                 <td><%= product.price %></td>
                 <td>
                   <button class="decrease">
@@ -39,8 +68,14 @@
         </tbody>
       </table>
     </div>
+    <% if (data.length > 0) { %> 
     <div class="paymentLink">
-      <a href="/payment"> Continue to Payment</a>
+      <button onclick="processPlaceOrder();"> Continue to Payment</button>
     </div>
+    <% } else { %>
+        <div class="paymentLink">
+            <button onclick="window.location.href='/';">Let's go shopping</button>
+        </div>
+    <% } %> 
   </div>
 </section>

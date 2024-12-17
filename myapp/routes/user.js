@@ -62,7 +62,6 @@ router.get("/login", async function (req, res, next) {
 /* POST /user/register */
 router.get("/register", function (req, res, next) {
     const { name, email, password } = req.query;
-    console.log(name, email, password)
 
     try {
         // Validate input

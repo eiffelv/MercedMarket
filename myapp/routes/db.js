@@ -99,7 +99,6 @@ const db = new sqlite3.Database(dbPath, (err) => {
                 err.message
               );
             } else if (row.count > 0) {
-              console.log(row.count);
               console.log(
                 "Products table already has data. Skipping insertion."
               );
@@ -161,6 +160,26 @@ const db = new sqlite3.Database(dbPath, (err) => {
       }
     );
   }
+
+  db.run(
+    `CREATE TABLE IF NOT EXISTS order_items (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL,
+      order_id INTEGER NOT NULL,
+      product_id INTEGER NOT NULL,
+      quantity INTEGER NOT NULL,
+      FOREIGN KEY (user_id) REFERENCES Users (id),
+      FOREIGN KEY (product_id) REFERENCES products (id),
+      FOREIGN KEY (order_id) REFERENCES orders (id)
+    )`,
+    (err) => {
+      if (err) {
+        console.error("Error creating order items", err.message);
+      } else {
+        console.log("Order items created successfully!");
+      }
+    }
+  );
 });
 
 module.exports = db;

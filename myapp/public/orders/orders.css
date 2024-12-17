@@ -83,19 +83,3 @@ button {
   width: 20px;
   height: 20px;
 }
-
-.quantity-label {
-    cursor: pointer;
-    display: inline-block;
-    padding: 5px;
-  }
-  
-  .quantity-input {
-    width: 50px;
-    text-align: center;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
