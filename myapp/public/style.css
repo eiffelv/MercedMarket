@@ -188,6 +188,7 @@ nav a:hover {
 
 main {
     min-height: calc(100vh - 220px);
+    padding: 0px 60px;
 }
 
 /* Media query for smaller screens */
