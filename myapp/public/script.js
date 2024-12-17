@@ -42,28 +42,32 @@ function rotateAds() {
 }
 
 //add item to cart
-document.getElementById('addToCartButton').addEventListener('click', function() {
-    const productId = 1; // Replace with the actual product ID
-    const quantity = 1; // Replace with the desired quantity
-  
-    fetch('/cart', {
+// script.js
+document.querySelectorAll('.addToCartButton').forEach(button => {
+  button.addEventListener('click', function() {
+    const productId = this.getAttribute('data-product-id');
+    const quantityInput = this.previousElementSibling;
+    let quantity = parseInt(quantityInput.value, 10);
+    const price = 19.99; // Replace with the actual price
+
+    fetch('/cart/addCartItem', {
       method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ productId, quantity })
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.success) {
-      alert('Item added to cart!');
-    } else {
-      alert('Failed to add item to cart.');
-    }
-  })
-  .catch(error => console.error('Error:', error));
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ product_id: productId, quantity: quantity, price: price })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        alert('Item added to cart!');
+      } else {
+        alert('Failed to add item to cart.');
+      }
+    })
+    .catch(error => console.error('Error:', error));
+  });
 });
-})
 
 
 setInterval(rotateAds, 3000);
