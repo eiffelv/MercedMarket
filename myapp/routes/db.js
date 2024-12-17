@@ -16,6 +16,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
         name TEXT NOT NULL,
         email TEXT NOT NULL UNIQUE,
         password TEXT NOT NULL,
+        token TEXT NOT NULL,
         address TEXT,
         city TEXT,
         state TEXT,
