@@ -1,11 +1,12 @@
 var express = require("express");
 var router = express.Router();
-const db = require('../public/db');
+const db = require('./db');
+const title_postfix = " - Merced Market";
 
 /* GET /cart/ */
 // Test route to ensure that the user router is working
 router.get("/", function (req, res, next) {
-  res.send("/cart OK");
+  res.render("cart", { title: "Cart" + title_postfix });
 });
 
 /* DELETE /cart/clearCart */

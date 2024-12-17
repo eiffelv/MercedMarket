@@ -1,17 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const sqlite3 = require('sqlite3').verbose();
-const path = require('path');
-
-// Connect to the SQLite database
-const dbPath = path.resolve(__dirname, '../database.sqlite');
-const db = new sqlite3.Database(dbPath, (err) => {
-    if (err) {
-        console.error('Error opening database:', err.message);
-    } else {
-        console.log('Connected to database.');
-    }
-});
+const db = require('./db');
 
 // Route to get products and render HTML
 router.get('/', (req, res) => {
@@ -20,7 +9,7 @@ router.get('/', (req, res) => {
             res.status(500).send('Error fetching products');
             return;
         }
-        res.render('product', { products: rows });
+        res.json(rows);
     });
 });
 

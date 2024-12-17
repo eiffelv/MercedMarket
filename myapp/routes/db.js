@@ -15,7 +15,13 @@ const db = new sqlite3.Database(dbPath, (err) => {
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
         email TEXT NOT NULL UNIQUE,
-        cart INTEGER DEFAULT 0
+        password TEXT NOT NULL,
+        address TEXT,
+        city TEXT,
+        state TEXT,
+        zip TEXT,
+        phone TEXT,
+        sfsu_id TEXT
       )`,
       (err) => {
         if (err) {
@@ -32,7 +38,8 @@ const db = new sqlite3.Database(dbPath, (err) => {
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
         description TEXT,
-        price REAL NOT NULL
+        price REAL NOT NULL,
+        image TEXT
       )`,
       (err) => {
         if (err) {
@@ -45,35 +52,41 @@ const db = new sqlite3.Database(dbPath, (err) => {
             {
               name: "SFSU ornament",
               description: "Purple ornament with school logo in the center",
-              price: 19.95
+              price: 19.95,
+              image: "ornament.webp"
             },
             {
               name: "SFSU thermos",
               description:
                 "Stainless stell thermas with SFSU logo printed on leather",
-              price: 29.99
+              price: 29.99,
+              image: "thermos.webp"
             },
             {
               name: "SFSU pennant",
               description: "Purple and yellow SFSU pennant flag",
-              price: 39.99
+              price: 39.99,
+              image: "pennant.webp"
             },
             {
               name: "SFSU mug",
               description:
                 "White mug with notable San Francisco, California icons ",
-              price: 49.99
+              price: 49.99,
+              image: "mug.webp"
             },
             {
               name: "SFSU gator",
               description: "Stuffed alligator wearing SFSU bandana",
-              price: 59.99
+              price: 59.99,
+              image: "plushie.webp"
             },
             {
               name: "SFSU tall cup",
               description:
                 "Silver cup printed with purple and yellow snowflakes and SFSU logo printed handle",
-              price: 69.99
+              price: 69.99,
+              image: "tallcup.webp"
             },
           ];
 
@@ -108,6 +121,41 @@ const db = new sqlite3.Database(dbPath, (err) => {
               });
             }
           });
+        }
+      }
+    );
+    // Create a table for cart items
+    db.run(
+      `CREATE TABLE IF NOT EXISTS cart_items (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER NOT NULL,
+        product_id INTEGER NOT NULL,
+        quantity INTEGER NOT NULL,
+        FOREIGN KEY (user_id) REFERENCES user_profiles (id),
+        FOREIGN KEY (product_id) REFERENCES products (id)
+      )`,
+      (err) => {
+        if (err) {
+          console.error("Error creating cart items", err.message);
+        } else {
+          console.log("Cart items created successfully!");
+        }
+      }
+    );
+
+    // Create a table for orders
+    db.run(
+      `CREATE TABLE IF NOT EXISTS orders (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER NOT NULL,
+        total REAL NOT NULL,
+        FOREIGN KEY (user_id) REFERENCES user_profiles (id)
+      )`,
+      (err) => {
+        if (err) {
+          console.error("Error creating orders", err.message);
+        } else {
+          console.log("Orders created successfully!");
         }
       }
     );

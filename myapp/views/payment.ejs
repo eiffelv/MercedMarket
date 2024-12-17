@@ -1,40 +1,35 @@
 <% title = "Merced Market" %>
-<% additionalStyles = ['/payment/payment.css'] %>
+<% additionalStyles = ['/login/login.css'] %>
 
 <%- contentFor('body') %>
 <section class="homepage">
-  <div class="center">
+  <div class="payment-container">
+    <h1>Payment Info</h1>
     <div class="loginReminder">
-      <h4>Haven an account? <a href="#"> Login </a></h4>
+      <h4>Have an account? <a href="/login"> Login </a></h4>
     </div>
-    <form id="payment-form">
+    <form id="loginForm">
       <h2>Customer Details</h2>
-      <label for="first-name">First Name</label>
-      <input type="text" id="firstName" required />
-      <label for="last-name">Last Name</label>
-      <input type="text" id="lastName" required />
+      <label for="full-name">Full Name</label>
+      <input type="text" id="full-name" placeholder="Example: John Doe" required />
       <label for="email">Email</label>
-      <input type="text" id="email" required />
+      <input type="text" id="email" placeholder="Example: jdoe@sfsu.edu" required />
       <label for="phone-number">Phone Number</label>
-      <input type="text" id="phone-number" required />
+      <input type="text" id="phone-number" placeholder="Example: 4159110000" required />
 
       <h2>Address Details</h2>
-      <label for="street">Street</label>
-      <input type="text" id="street" required />
+      <label for="street">Full Address</label>
+      <input type="text" id="street" placeholder="Example: 1600 Holloway Ave" required />
       <label for="city">City</label>
-      <input type="text" id="city" required />
+      <input type="text" id="city" placeholder="Example: San Francisco" required />
       <label for="state">State</label>
-      <input type="text" id="state" required />
-      <label for="zip">Zip Code</label>
-      <input type="text" id="zip" required />
+      <input type="text" id="state" placeholder="Example: CA" required />
+      <label for="zip">ZIP Code</label>
+      <input type="text" id="zip" placeholder="Example: 94132" required />
 
       <h2>Payment Details</h2>
-      <label for="card-name">Name on Card</label>
-      <input type="text" id="card-name" required />
-      <label for="card-number">Card Number</label>
-      <input type="text" id="card-number" required />
-      <label for="security-code">Security Code</label>
-      <input type="text" id="security-code" required />
+      <label for="sfsu-id">SFSU ID</label>
+      <input type="text" id="sfsu-id" placeholder="Example: 924000000" required />
 
       <button type="submit">Submit Order</button>
     </form>
