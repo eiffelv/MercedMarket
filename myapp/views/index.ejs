@@ -4,24 +4,23 @@
     <div class="center">
       <div class="ad-container">
         <div class="ad-rotator">
-          <img src="assests/iPhone16Pro.png" alt="iPhone16Pro" class="ad-img" />
+          <img src="../public/assests/iPhone16Pro.png" alt="iPhone16Pro" class="ad-img" />
         </div>
       </div>
 
-      <!-- This is how you can pass variables from the server to the client -->
       <!-- Check routes/index.js file to see the variable -->
       <h1><%= testmessage %></h1>
 
       <!-- Main Page Products -->
       <div class="products">
-        <% products.forEach((product) => { %>
+        <% products.forEach(product => { %>
           <div class="product">
-            <img src="product/product-1.webp" alt="Product 1" />
-            <h3>Product 1</h3>
-            <p>$19.99</p>
+            <img src="<%= product.image %>" alt="<%= product.description %>" />
+            <h3><%= product.name %></h3>
+            <p>$<%= product.price %></p>
             <a href="/product"><button>Details</button></a>
           </div>
-        <% }); %>
+        <% }) %>
       </div>
       <!-- Closing the products div -->
     </div>
