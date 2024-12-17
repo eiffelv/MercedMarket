@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("./db");
+const {checkToken} = require("./utils");
 
 function generateToken(length = 16, charsAllowed = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789") {
     let token = "";
@@ -9,37 +10,6 @@ function generateToken(length = 16, charsAllowed = "abcdefghijklmnopqrstuvwxyzAB
         token += charsAllowed[randomIndex];
     }
     return token;
-}
-
-async function checkToken(uid, token) {
-    if (!uid || !token) {
-        return false;
-    }
-
-    try {
-        // Wrap the callback-based db.get in a Promise
-        const user = await new Promise((resolve, reject) => {
-            db.get("SELECT * FROM Users WHERE id = ?", [uid], (err, row) => {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve(row);
-                }
-            });
-        });
-
-        if (!user) {
-            return false;
-        }
-
-        if (user.token === token) {
-            return true;
-        } else {
-            return false;
-        }
-    } catch (error) {
-        return false;
-    }
 }
 
 
@@ -81,7 +51,6 @@ router.get("/login", async function (req, res, next) {
                     if (callback) callback(null, false);
                     return;
                 }
-
                 console.log(`Token updated successfully for email: ${email}`);
                 console.log(`New Token: ${token}`);
                 return res.status(200).json({ token: token, uid: user.id });
