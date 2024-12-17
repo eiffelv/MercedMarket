@@ -59,7 +59,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
             {
               name: "SFSU thermos",
               description:
-                "Stainless stell thermas with SFSU logo printed on leather",
+                "Stainless stell thermos with SFSU logo printed on leather",
               price: 29.99,
               stock: 9
             },
