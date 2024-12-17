@@ -17,7 +17,7 @@ router.get("/clearCart", async function (req, res, next) {
     const token = req.cookies.token;
     const uid = req.cookies.uid;
     if (!await checkToken(uid, token)) {
-        res.status(403).json({ message: "Invalid Token" });
+        return res.status(403).json({ message: "Invalid Token" });
     }
     db.run(
         "Delete from cart_items where user_id = ?",
@@ -70,11 +70,8 @@ router.get("/addCartItem", async function (req, res, next) {
     const token = req.cookies.token;
     const uid = req.cookies.uid;
     if (!await checkToken(uid, token)) {
-        res.status(403).json({ message: "Invalid Token" });
+        return res.status(403).json({ message: "Invalid Token" });
     }
-    db.get("SELECT * FROM products", async (err, products) => {
-        console.log(products);
-    });
     db.get(
         "SELECT * FROM products WHERE id = ?",
         [product],
@@ -89,10 +86,9 @@ router.get("/addCartItem", async function (req, res, next) {
                         if (err.message.includes("UNIQUE constraint failed")) {
                             return res.status(409).json({ error: "Failed" });
                         }
-                        console.log(err);
                         return res.status(500).json({ error: "Failed" });
                     }
-                    res.status(200).json({ message: "Insertation Succeeded" });
+                    return res.status(200).json({ message: "Insertation Succeeded" });
                 }
             );
         }
@@ -185,7 +181,7 @@ router.get("/updateCartItem", async function (req, res, next) {
                         console.error(updateErr.message);
                         return res.status(500).json({ message: "Failed to update quantity" });
                     }
-                    res.status(200).json({ message: "Quantity updated successfully" });
+                    return res.status(200).json({ message: "Quantity updated successfully" });
                 }
             );
         }
