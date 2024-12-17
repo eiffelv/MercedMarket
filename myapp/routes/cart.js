@@ -15,16 +15,7 @@ router.delete("/clearCart", function (req, res, next) {
 
 /* POST /cart/addCartItem */
 router.post("/addCartItem", function (req, res, next) {
-  const { product_id, quantity, price } = req.body;
-  const query = 'INSERT INTO cart_items (product_id, quantity, price) VALUES (?, ?, ?)';
-  const params = [product_id, quantity, price];
-
-  db.run(query, params, function(err) {
-    if (err) {
-      return res.status(500).json({ error: err.message });
-    }
-    res.json({ id: this.lastID });
-  });
+  // post car logic here
 });
 
 /* DELETE /cart/deleteCartItem */
