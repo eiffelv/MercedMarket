@@ -1,18 +1,34 @@
-document.getElementById('registerForm').addEventListener('submit', async function (e) {
-    e.preventDefault();
+window.onload = function () {
+    document.getElementById("registerBtn").onclick = async function (e) {
+        e.preventDefault();
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
 
-    // Used to validate password
-    if (password !== confirmPassword){
-        alert('Passwords do not match! Please try again.');
-        return;
-    }
-    
+        // Used to validate password
+        if (password !== confirmPassword) {
+            alert('Passwords do not match! Please try again.');
+            return;
+        }
 
-    // Log form data -- Test only
-    console.log({name, email, password});
-})
+
+        fetch('/user/register?email=' + email + '&password=' + password + "&name=" + name)
+            .then(response => {
+                if (!response.ok) {
+                    alert("Login Failed!");
+                    window.location.reload();
+                }
+                return response.json(); // Parse JSON response
+            })
+            .then(data => {
+                alert("Success");
+                window.location.href = "/login";
+            })
+            .catch(error => {
+                alert("Registration Failed!");
+                window.location.reload();
+            });//abc@abc.com&password=123123
+    };
+}

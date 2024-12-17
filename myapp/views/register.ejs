@@ -1,9 +1,10 @@
 <% title = 'Register' %> <% additionalStyles = ['/login/login.css'] %>
+<% additionalScripts=['./register.js'] %>
 
 <%- contentFor('body') %>
 <div class="login-container">
   <h1>Register</h1>
-  <form id="loginForm">
+  <div id="loginForm">
     <label for="name">Full Name:</label>
     <input type="text" id="name" placeholder="John Doe" required />
 
@@ -34,8 +35,7 @@
       required
     />
 
-    <button type="submit">Register</button>
-  </form>
+    <button id="registerBtn">Register</button>
+  </div>
   <p>Already have an account? <a href="/login">Login here!</a></p>
 </div>
-<script src="register.js" defer></script>

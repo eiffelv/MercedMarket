@@ -25,7 +25,7 @@ body {
     color: #333;
 }
 
-.register-container form {
+.register-container div {
     display: flex;
     flex-direction: column
 }

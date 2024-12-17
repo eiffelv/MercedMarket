@@ -38,8 +38,8 @@
     color: #333;
 }
 
-.login-container form,
-.payment-container form {
+.login-container div,
+.payment-container div {
     display: flex;
     flex-direction: column;
 }

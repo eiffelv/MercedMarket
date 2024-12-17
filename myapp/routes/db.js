@@ -37,11 +37,10 @@ const db = new sqlite3.Database(dbPath, (err) => {
     db.run(
       `CREATE TABLE IF NOT EXISTS products (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        image TEXT NOT NULL,
         name TEXT NOT NULL,
         description TEXT,
         price REAL NOT NULL,
-        image TEXT
+        stock INTEGER NOT NULL
       )`,
       (err) => {
         if (err) {
@@ -52,49 +51,43 @@ const db = new sqlite3.Database(dbPath, (err) => {
           //insert store products
           const products = [
             {
-              image: "ornament.webp",
               name: "SFSU ornament",
               description: "Purple ornament with school logo in the center",
               price: 19.95,
-              image: "ornament.webp"
+              stock: 19
             },
             {
-              image: "thermos.webp",
               name: "SFSU thermos",
               description:
                 "Stainless stell thermas with SFSU logo printed on leather",
               price: 29.99,
-              image: "thermos.webp"
+              stock: 9
             },
             {
-              image: "pennant.webp",
               name: "SFSU pennant",
               description: "Purple and yellow SFSU pennant flag",
               price: 39.99,
-              image: "pennant.webp"
+              stock: 11
             },
             {
-              image: "mug.webp",
               name: "SFSU mug",
               description:
                 "White mug with notable San Francisco, California icons ",
               price: 49.99,
-              image: "mug.webp"
+              stock: 20
             },
             {
-              image: "plushie.webp",
               name: "SFSU gator",
               description: "Stuffed alligator wearing SFSU bandana",
               price: 59.99,
-              image: "plushie.webp"
+              stock: 13
             },
             {
-              image: "tallcup.webp",
               name: "SFSU tall cup",
               description:
                 "Silver cup printed with purple and yellow snowflakes and SFSU logo printed handle",
               price: 69.99,
-              image: "tallcup.webp"
+              stock: 22
             },
           ];
 
@@ -114,8 +107,8 @@ const db = new sqlite3.Database(dbPath, (err) => {
               console.log("Inserting products into table...");
               products.forEach((product) => {
                 db.run(
-                  `INSERT OR IGNORE INTO products (name, description, price) VALUES (?, ?, ?)`,
-                  [product.name, product.description, product.price],
+                  `INSERT INTO products (name, description, price, stock) VALUES (?, ?, ?, ?)`,
+                  [product.name, product.description, product.price, product.stock],
                   (err) => {
                     if (err) {
                       console.error("Error inserting product", err.message);
