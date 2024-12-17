@@ -45,35 +45,35 @@ const db = new sqlite3.Database(dbPath, (err) => {
             {
               name: "SFSU ornament",
               description: "Purple ornament with school logo in the center",
-              price: 19.95,
+              price: 19.95
             },
             {
               name: "SFSU thermos",
               description:
                 "Stainless stell thermas with SFSU logo printed on leather",
-              price: 29.99,
+              price: 29.99
             },
             {
               name: "SFSU pennant",
               description: "Purple and yellow SFSU pennant flag",
-              price: 39.99,
+              price: 39.99
             },
             {
               name: "SFSU mug",
               description:
                 "White mug with notable San Francisco, California icons ",
-              price: 49.99,
+              price: 49.99
             },
             {
               name: "SFSU gator",
               description: "Stuffed alligator wearing SFSU bandana",
-              price: 59.99,
+              price: 59.99
             },
             {
               name: "SFSU tall cup",
               description:
                 "Silver cup printed with purple and yellow snowflakes and SFSU logo printed handle",
-              price: 69.99,
+              price: 69.99
             },
           ];
 
