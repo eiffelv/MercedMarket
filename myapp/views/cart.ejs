@@ -1,5 +1,6 @@
 <% title = "Merced Market" %>
 <% additionalStyles = ['/payment/payment.css'] %>
+<% additionalScripts = ['/payment/payment.js'] %>
 
 <%- contentFor('body') %>
 <section class="homepage">
@@ -16,18 +17,25 @@
             <th>Action</th>
           </tr>
         </thead>
-        <!-- Cart items dynamically inserted here -->
         <tbody>
-          <tr>
-            <td>Item image</td>
-            <td>1</td>
-            <td>$$$</td>
-            <td>
-              <button class="decrease">
-                <img src="payment/trash.png" alt="Delete" class="delete-icon" />
-              </button>
-            </td>
-          </tr>
+        <!-- Cart items dynamically inserted here -->
+        <% if (data.length > 0) { %> 
+         <% data.forEach(product => { %>
+            <tr>
+                <% const productImage = '/img/' + product.product_id %>
+                <td><img class="productImage" src="<%= productImage %>"></td>
+                <td><%= product.quantity %></td>
+                <td><%= product.price %></td>
+                <td>
+                  <button class="decrease">
+                    <img src="payment/trash.png" alt="Delete" class="delete-icon" onclick="deleteItem(<%= product.product_id %>)" />
+                  </button>
+                </td>
+            </tr>
+        <% }) %>
+        <% } else { %>
+            <td><h3>Nothing here...</h3></td>
+        <% } %>
         </tbody>
       </table>
     </div>

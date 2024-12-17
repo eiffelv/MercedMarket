@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('./db');
 const title_postfix = " - Merced Market";
+const {checkToken} = require("./utils");
 
 /* GET home page. */
 router.get("/", (req, res) => {
@@ -9,7 +10,7 @@ router.get("/", (req, res) => {
         if (err) {
             return res.status(500).send('Error retrieving products');
         }
-        res.render("index", { title: "Home" + title_postfix, testmessage: "Express is Working!", products: products });
+        res.render("index", { title: "Home" + title_postfix, products: products });
     });
 });
 
@@ -19,8 +20,31 @@ router.get("/about", (req, res) => {
 });
 
 /* GET /cart */
-router.get("/cart", (req, res) => {
-    res.render("cart", { title: "Cart" + title_postfix });
+router.get("/cart", async (req, res) => {
+    const token = req.cookies.token;
+    const uid = req.cookies.uid;
+    if (!await checkToken(uid, token)) {
+        return res.redirect("/login");
+    }
+    db.all(`SELECT cart_items.id AS cart_item_id, 
+                cart_items.user_id, 
+                cart_items.product_id, 
+                cart_items.quantity, 
+                products.name, 
+                products.price, 
+                products.description
+         FROM cart_items
+         JOIN products ON cart_items.product_id = products.id
+         WHERE cart_items.user_id = ?`,
+        [uid], (err, items) => {
+        if (err) {
+            return res.redirect("/login");
+        }
+        console.log(items);
+        if(!items)
+            res.render("cart", { title: "Cart" + title_postfix, data: []});
+        res.render("cart", { title: "Cart" + title_postfix, data: items});
+    });
 });
 
 /* GET /login */

@@ -5,10 +5,7 @@
 <section class="homepage">
   <div class="payment-container">
     <h1>Payment Info</h1>
-    <div class="loginReminder">
-      <h4>Have an account? <a href="/login"> Login </a></h4>
-    </div>
-    <form id="loginForm">
+    <div id="payment-form">
       <h2>Customer Details</h2>
       <label for="full-name">Full Name</label>
       <input type="text" id="full-name" placeholder="Example: John Doe" required />
@@ -27,11 +24,11 @@
       <label for="zip">ZIP Code</label>
       <input type="text" id="zip" placeholder="Example: 94132" required />
 
-      <h2>Payment Details</h2>
-      <label for="sfsu-id">SFSU ID</label>
-      <input type="text" id="sfsu-id" placeholder="Example: 924000000" required />
+      <h2>Payment Method</h2>
+      <label for="cardNumber">Card Number</label>
+      <input type="number" id="cardNumber" placeholder="Example: 4111 1111 1111 1111" required />
 
       <button type="submit">Submit Order</button>
-    </form>
+    </div>
   </div>
 </section>
