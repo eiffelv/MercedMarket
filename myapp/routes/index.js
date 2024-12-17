@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../public/db');
+const db = require('./db');
 const title_postfix = " - Merced Market";
 
 /* GET home page. */
