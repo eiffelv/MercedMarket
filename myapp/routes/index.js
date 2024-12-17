@@ -9,32 +9,32 @@ router.get("/", function (req, res, next) {
 
 /* GET /about */
 router.get("/about", function (req, res, next) {
-  res.render("about", { title: "About Us" });
+  res.render("about");
 });
 
 /* GET /cart */
 router.get("/cart", function (req, res, next) {
-  res.render("cart", { title: "Cart" });
+  res.render("cart");
 });
 
 /* GET /login */
 router.get("/login", function (req, res, next) {
-  res.render("login", { title: "Login" });
+  res.render("login");
 });
 
 /* GET /register */
 router.get("/register", function (req, res, next) {
-  res.render("register", { title: "Register" });
+  res.render("register");
 });
 
 /* GET /product */
 router.get("/product", function (req, res, next) {
-  res.render("product", { title: "Product" });
+  res.render("product");
 });
 
 /* GET /payment */
 router.get("/payment", function (req, res, next) {
-  res.render("payment", { title: "Payment" });
+  res.render("payment");
 });
 
 module.exports = router;
