@@ -138,3 +138,4 @@ package-lock.json
 # SQLite
 *.sqlite-journal
 *.sqlite
+myapp/routes/database.sqlite

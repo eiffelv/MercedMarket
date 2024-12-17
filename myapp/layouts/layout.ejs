@@ -60,6 +60,7 @@
         </div>
     </header>
     <nav>
+        <a href="/">Home</a>
         <a>Food</a>
         <a>Books</a>
         <a>Electronics</a>
@@ -83,7 +84,12 @@
         </div>
     </footer>
     <!-- Link to JS -->
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
+    <% if (typeof additionalScripts !== 'undefined') { %>
+        <% additionalScripts.forEach(function(script) { %>
+          <script src="<%= script %>"></script>
+        <% }); %>
+      <% } %>
 </body>
 
 </html>

@@ -113,8 +113,8 @@ const db = new sqlite3.Database(dbPath, (err) => {
               console.log("Inserting products into table...");
               products.forEach((product) => {
                 db.run(
-                  `INSERT INTO products (name, description, price, stock) VALUES (?, ?, ?, ?)`,
-                  [product.name, product.description, product.price, product.stock],
+                  `INSERT INTO products (id, name, description, price, stock) VALUES (?, ?, ?, ?, ?)`,
+                  [product.id, product.name, product.description, product.price, product.stock],
                   (err) => {
                     if (err) {
                       console.error("Error inserting product", err.message);
