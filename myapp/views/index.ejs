@@ -4,7 +4,7 @@
     <div class="center">
       <div class="ad-container">
         <div class="ad-rotator">
-          <img src="../public/assests/iPhone16Pro.png" alt="iPhone16Pro" class="ad-img" />
+          <img src="./assests/iPhone16Pro.png" alt="iPhone16Pro" class="ad-img" />
         </div>
       </div>
 
@@ -14,8 +14,9 @@
       <!-- Main Page Products -->
       <div class="products">
         <% products.forEach(product => { %>
+          <% const productImage = './product/' + product.image %>
           <div class="product">
-            <img src="<%= product.image %>" alt="<%= product.description %>" />
+            <img src="<%= productImage %>" alt="<%= product.description %>" />
             <h3><%= product.name %></h3>
             <p>$<%= product.price %></p>
             <a href="/product"><button>Details</button></a>
