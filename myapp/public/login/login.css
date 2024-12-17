@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-content: center;
     height: 100vh;
-}
+} */
 
 .login-container {
     background-color: white;
@@ -17,6 +17,7 @@ body {
     width: 100%;
     max-width: 400px;
     text-align: center;
+    margin: 2rem auto;
 }
 
 .login-container h1 {

@@ -4,6 +4,7 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const port = 3000;
+const expressLayouts = require("express-ejs-layouts");
 
 // Import routers
 const indexRouter = require("./routes/index");
@@ -11,11 +12,13 @@ const usersRouter = require("./routes/user");
 const cartRouter = require("./routes/cart");
 const orderRouter = require("./routes/order");
 const productsRouter = require("./routes/products")
+
 // Create an express application
 const app = express();
 
-// Setup view engine
+// Setup paths for views and view engine
 app.set("views", path.join(__dirname, "views"));
+app.set("layout", path.join(__dirname, "layouts/layout"));
 
 // Using EJS to simplify convertion from existing HTML to EJS
 app.set("view engine", "ejs");
@@ -24,6 +27,11 @@ app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+// Setup express-ejs-layouts
+app.use(expressLayouts);
+app.set("layout extractScripts", true);
+app.set("layout extractStyles", true);
 
 // Setup directory to store static files (images, css, js)
 app.use(express.static(path.join(__dirname, "public")));

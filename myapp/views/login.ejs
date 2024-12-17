@@ -1,25 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>User Login Page</title>
-        <link rel="stylesheet" href="login.css">
-    </head>
-    <body>
-        <div class="login-container">
-            <h1>Login</h1>
-            <form id="loginForm">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="jdoe@sfsu.edu" required>
+<% title = 'User Login Page' %>
+<% additionalStyles = ['/login/login.css'] %>
 
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+<%- contentFor('body') %>
+<div class="login-container">
+  <h1>Login</h1>
+  <form id="loginForm">
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="jdoe@sfsu.edu"
+      required
+    />
 
-                <button type="submit">Login</button>
-            </form>
-            <p>Don't have an account? <a href="/register">Register here!</a></p>
-            <p><a href="/">Return Home</a></p>
-        </div>
-    </body>
-</html>
+    <label for="password">Password</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      placeholder="Enter your password"
+      required
+    />
+
+    <button type="submit">Login</button>
+  </form>
+  <p>Don't have an account? <a href="/register">Register here!</a></p>
+</div>

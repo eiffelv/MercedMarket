@@ -1,32 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Page</title>
-    <link rel="stylesheet" href="/login/login.css">
-</head>
-<body>
-    <div class="login-container">
-        <h1>Register</h1>
-        <form id="loginForm">
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" placeholder="John Doe" required>
+<% title = 'Register' %> <% additionalStyles = ['/login/login.css'] %>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="jdoe@sfsu.edu" required>
+<%- contentFor('body') %>
+<div class="login-container">
+  <h1>Register</h1>
+  <form id="loginForm">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" placeholder="John Doe" required />
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" placeholder="Create a password" required>
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="jdoe@sfsu.edu"
+      required
+    />
 
-            <label for="confirmPassword">Confirm Password:</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" required>
+    <label for="password">Password:</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      placeholder="Create a password"
+      required
+    />
 
-            <button type="submit">Register!</button>
-        </form>
-        <p>Already have an account? <a href="/login">Login here</a></p>
-        <p><a href="/">Return Home</a></p>
-    </div>
-    <script src="register.js" defer></script>
-</body>
-</html>
+    <label for="confirmPassword">Confirm Password:</label>
+    <input
+      type="password"
+      id="confirmPassword"
+      name="confirmPassword"
+      placeholder="Re-enter your password"
+      required
+    />
+
+    <button type="submit">Register</button>
+  </form>
+  <p>Already have an account? <a href="/login">Login here!</a></p>
+</div>
+<script src="register.js" defer></script>
