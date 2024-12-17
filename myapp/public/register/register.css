@@ -46,7 +46,7 @@ body {
 .register-container button {
     padding: 0.75rem;
     border: none;
-    background-color: #833BF6;
+    background-color: #4C277A;
     color: whitesmoke;
     font-size: 1rem;
     border-radius: 5px;
@@ -64,6 +64,6 @@ body {
 }
 
 .register-container p a {
-    color: #833BF6;
+    color: #4C277A;
     text-decoration: none;
 }
