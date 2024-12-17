@@ -38,7 +38,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
         //insert store products
         const products = [
           {name: 'SFSU ornament', description: 'Purple ornament with school logo in the center', price: 19.95},
-          {name: 'SFSU thermas', description: 'Stainless stell thermas with SFSU logo printed on leather', price: 29.99 },
+          {name: 'SFSU thermos', description: 'Stainless stell thermas with SFSU logo printed on leather', price: 29.99 },
           {name: 'SFSU pennant', description: 'Purple and yellow SFSU pennant flag', price: 39.99},
           {name: 'SFSU mug', description: 'White mug with notable San Francisco, California icons ', price: 49.99},
           {name: 'SFSU gator', description: 'Stuffed alligator wearing SFSU bandana', price: 59.99},
@@ -47,7 +47,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
 
         products.forEach(product => {
           db.run(`INSERT OR IGNORE INTO products (name, description, price) VALUES (?, ?, ?)`, 
-              [product.name, product.description, product.price, product.stock], 
+              [product.name, product.description, product.price], 
               (err) => {
                   if (err) {
                       console.error('Error inserting product', err.message);
