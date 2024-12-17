@@ -19,7 +19,7 @@ async function checkToken(uid, token) {
     try {
         // Wrap the callback-based db.get in a Promise
         const user = await new Promise((resolve, reject) => {
-            db.get("SELECT * FROM user_profiles WHERE id = ?", [uid], (err, row) => {
+            db.get("SELECT * FROM Users WHERE id = ?", [uid], (err, row) => {
                 if (err) {
                     reject(err);
                 } else {
@@ -58,7 +58,7 @@ router.get("/login", async function (req, res, next) {
     }
 
     db.get(
-        "SELECT * FROM user_profiles WHERE email = ?",
+        "SELECT * FROM Users WHERE email = ?",
         [email],
         async (err, user) => {
             if (err) return res.status(500).json({ error: "Database error" });
@@ -66,7 +66,7 @@ router.get("/login", async function (req, res, next) {
 
 
             const token = generateToken();
-            const updateSql = `UPDATE user_profiles SET token = ? WHERE email = ?`;
+            const updateSql = `UPDATE Users SET token = ? WHERE email = ?`;
 
             // Execute the UPDATE statement
             db.run(updateSql, [token, email], async function (err) {
@@ -105,7 +105,7 @@ router.get("/register", function (req, res, next) {
 
         // Insert user
         db.run(
-            "INSERT INTO user_profiles (name, email, password, token) VALUES (?, ?, ?, ?)",
+            "INSERT INTO Users (name, email, password, token) VALUES (?, ?, ?, ?)",
             [name, email, password, token],
             function (err) {
                 if (err) {
@@ -169,7 +169,7 @@ router.post("/setupPayment", function (req, res, next) {
         const userId = decoded.userId;
 
         db.run(
-            `UPDATE user_profiles 
+            `UPDATE Users 
        SET address = ?, city = ?, state = ?, zip = ?, phone = ?, sfsu_id = ?
        WHERE id = ?`,
             [address, city, state, zip, phone, sfsu_id, userId],

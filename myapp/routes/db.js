@@ -11,7 +11,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
 
     // Create a table for user profiles
     db.run(
-      `CREATE TABLE IF NOT EXISTS user_profiles (
+      `CREATE TABLE IF NOT EXISTS Users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
         email TEXT NOT NULL UNIQUE,
@@ -139,7 +139,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
         user_id INTEGER NOT NULL,
         product_id INTEGER NOT NULL,
         quantity INTEGER NOT NULL,
-        FOREIGN KEY (user_id) REFERENCES user_profiles (id),
+        FOREIGN KEY (user_id) REFERENCES Users (id),
         FOREIGN KEY (product_id) REFERENCES products (id)
       )`,
       (err) => {
@@ -157,7 +157,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         user_id INTEGER NOT NULL,
         total REAL NOT NULL,
-        FOREIGN KEY (user_id) REFERENCES user_profiles (id)
+        FOREIGN KEY (user_id) REFERENCES Users (id)
       )`,
       (err) => {
         if (err) {
