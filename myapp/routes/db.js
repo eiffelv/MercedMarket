@@ -51,12 +51,14 @@ const db = new sqlite3.Database(dbPath, (err) => {
           //insert store products
           const products = [
             {
+              id: 121,
               name: "SFSU ornament",
               description: "Purple ornament with school logo in the center",
               price: 19.95,
               stock: 19
             },
             {
+              id: 125,
               name: "SFSU thermos",
               description:
                 "Stainless stell thermos with SFSU logo printed on leather",
@@ -64,12 +66,14 @@ const db = new sqlite3.Database(dbPath, (err) => {
               stock: 9
             },
             {
+              id: 126,
               name: "SFSU pennant",
               description: "Purple and yellow SFSU pennant flag",
               price: 39.99,
               stock: 11
             },
             {
+              id: 124,
               name: "SFSU mug",
               description:
                 "White mug with notable San Francisco, California icons ",
@@ -77,12 +81,14 @@ const db = new sqlite3.Database(dbPath, (err) => {
               stock: 20
             },
             {
+              id: 122,
               name: "SFSU gator",
               description: "Stuffed alligator wearing SFSU bandana",
               price: 59.99,
               stock: 13
             },
             {
+              id: 123,
               name: "SFSU tall cup",
               description:
                 "Silver cup printed with purple and yellow snowflakes and SFSU logo printed handle",
