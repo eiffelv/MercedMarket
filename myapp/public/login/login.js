@@ -27,7 +27,7 @@ window.onload = function () {
             .catch(error => {
                 alert("Login Failed!");
                 window.location.reload();
-            });//abc@abc.com&password=123123
+            });
 
 
     };

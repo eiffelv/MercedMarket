@@ -29,6 +29,6 @@ window.onload = function () {
             .catch(error => {
                 alert("Registration Failed!");
                 window.location.reload();
-            });//abc@abc.com&password=123123
+            });
     };
 }

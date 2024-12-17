@@ -1,18 +1,23 @@
 <%- contentFor('body') %>
+<% additionalScripts=['./product.js'] %>
 
 <section class="product-page">
   <div class="container">
     <div class="product-detail">
-      <img src="/product/product-1.webp" alt="Product Image" />
+      <img src="/img/<%- id %>" alt="Product Image" />
       <div class="product-info">
-        <h2>Product Title</h2>
-        <p class="price">$19.99</p>
+        <h2><%- name %></h2>
+        <p class="price"><%- price %></p>
         <p class="description">
-          This is a detailed description of the product. It includes all the
-          features and benefits of the product.
+            <%- desc %>
         </p>
         <button id="addToCartButton">Add to Cart</button>
       </div>
     </div>
   </div>
+  <script>
+    const data = {
+      id: id
+    };
+  </script>
 </section>

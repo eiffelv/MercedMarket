@@ -1,3 +1,4 @@
+<% additionalScripts=['./index.js'] %>
 <%- contentFor('body') %>
 <section class="homepage">
   <div class="container">
@@ -14,12 +15,12 @@
       <!-- Main Page Products -->
       <div class="products">
         <% products.forEach(product => { %>
-          <% const productImage = '/product/' + product.image %>
+          <% const productImage = '/img/' + product.id %>
           <div class="product">
             <img src="<%= productImage %>" alt="<%= product.description %>" />
             <h3><%= product.name %></h3>
             <p>$<%= product.price %></p>
-            <a href="/product"><button>Details</button></a>
+            <a href="/product/<%= product.id %>"><button>Details</button></a>
           </div>
         <% }) %>
       </div>
