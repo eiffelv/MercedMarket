@@ -41,7 +41,7 @@ body {
     overflow: hidden;
 }
 
-.ad-image {
+.ad-img {
     max-width: 100%;
     height: auto;
     transition: opacity 0.5s ease-in-out;
@@ -226,7 +226,23 @@ main {
         /* Makes things visable on smaller screens */
         z-index: 1100;
     }
-}
+    .ad-rotator {
+        height: 150px; /* Reduce height */
+      }
+    
+      .ad-img {
+        max-width: 80%; /* Scale down the image */
+      }
+    }
+    @media (max-width: 480px) {
+        .ad-rotator {
+          height: 100px; /* Further reduce height */
+        }
+      
+        .ad-img {
+          max-width: 70%; /* Further scale down */
+        }
+      }
 
 header nav form {
     display: flex;
